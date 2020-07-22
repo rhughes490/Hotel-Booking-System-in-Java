@@ -15,7 +15,23 @@ public class RoomTest {
   }
 
   @Test
-  public void getCapacity() {
+  public void canGetCapacity() {
     assertEquals(2, room.getCapacity());
+  }
+
+  @Test
+  public void canGetName() {
+    assertEquals("A123", room.getName());
+  }
+
+  @Test
+  public void canGetType() {
+    assertEquals("Double", room.getType());
+  }
+
+  @Test
+  public void canCountGuestsInRoom() {
+    room.addGuest(guest);
+    assertEquals(1, room.guestsInRoom());
   }
 }

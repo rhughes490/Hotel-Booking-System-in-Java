@@ -17,11 +17,11 @@ public class Room {
     return capacity;
   }
 
-  public String name() {
+  public String getName() {
     return name;
   }
 
-  public String type() {
+  public String getType() {
     return type;
   }
 
@@ -29,6 +29,9 @@ public class Room {
     return this.guests.size();
   }
 
+  public void addGuest(Guest guest) {
+    this.guests.add(guest);
+  }
 
 
 }

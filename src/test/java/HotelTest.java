@@ -10,12 +10,14 @@ public class HotelTest {
 private Hotel hotel;
 private Room room;
 private Guest guest;
+private Booking booking;
 
     @Before
     public void before() {
       hotel = new Hotel(10);
-      room = new Room("A123", 2, "Double");
+      room = new Room("A123", 2, "Double", 100);
       guest = new Guest("Bob");
+//      booking = new Booking(3, room);
       hotel.addRoom(room);
     }
 
@@ -31,6 +33,12 @@ private Guest guest;
         hotel.checkIn(guest);
         hotel.checkOut(room);
         assertEquals(0, room.guestsInRoom());
+    }
+
+    @Test
+    public void canMakeBooking() {
+       hotel.bookRoom(3, room);
+        assertEquals(1, hotel.getNumberOfBookings());
     }
 
 }

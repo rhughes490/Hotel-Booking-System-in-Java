@@ -6,11 +6,13 @@ public class Hotel {
     private ArrayList<Room> rooms;
     private HashMap<String, String> typesHashMap;
     private int capacity;
+    private ArrayList<Booking> bookings;
 
     public Hotel(int capacity) {
         this.capacity = capacity;
         this.typesHashMap = new HashMap<String, String>();
         this.rooms = new ArrayList<Room>();
+        this.bookings = new ArrayList<Booking>();
     }
 
     public void addRoom(Room room) {
@@ -32,5 +34,15 @@ public class Hotel {
               }
           }
      }
+
+    public Booking bookRoom(int numberOfNights, Room room) {
+        Booking booking = new Booking (numberOfNights, room);
+        this.bookings.add(booking);
+        return booking;
+    }
+
+    public int getNumberOfBookings() {
+        return this.bookings.size();
+    }
 
 }

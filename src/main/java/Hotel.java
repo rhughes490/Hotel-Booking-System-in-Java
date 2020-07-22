@@ -25,4 +25,12 @@ public class Hotel {
          }
      }
 
+     public void checkOut(Room room) {
+          for (Room individualRoom : this.rooms) {
+              if (individualRoom.equals(room)) {
+                  individualRoom.removeAllGuestsFromRoom();
+              }
+          }
+     }
+
 }

@@ -29,6 +29,10 @@ public class Room {
     return this.guests.size();
   }
 
+  public void removeAllGuestsFromRoom() {
+    this.guests.clear();
+  }
+
   public void addGuest(Guest guest) {
     if(capacity > guests.size())
       this.guests.add(guest);

@@ -25,6 +25,14 @@ private Guest guest;
         assertEquals(1, room.guestsInRoom());
     }
 
+    @Test
+    public void canCheckOutGuest() {
+        hotel.checkIn(guest);
+        hotel.checkIn(guest);
+        hotel.checkOut(room);
+        assertEquals(0, room.guestsInRoom());
+    }
+
 }
 
 

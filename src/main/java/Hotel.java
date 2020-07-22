@@ -5,12 +5,14 @@ public class Hotel {
 
     private ArrayList<Room> rooms;
     private HashMap<String, String> typesHashMap;
+    private HashMap<String, DiningRoom> diningRoomsHashMap;
     private int capacity;
     private ArrayList<Booking> bookings;
 
     public Hotel(int capacity) {
         this.capacity = capacity;
         this.typesHashMap = new HashMap<String, String>();
+        this.diningRoomsHashMap = new HashMap<String, DiningRoom>();
         this.rooms = new ArrayList<Room>();
         this.bookings = new ArrayList<Booking>();
     }
@@ -44,5 +46,13 @@ public class Hotel {
     public int getNumberOfBookings() {
         return this.bookings.size();
     }
+
+    public void addDiningRoom(DiningRoom diningRoom) {
+        diningRoomsHashMap.put("BigRoom", diningRoom);
+    }
+
+//    public String getDiningRoomByName {
+//        return diningRoom.name where ;
+//    }
 
 }
